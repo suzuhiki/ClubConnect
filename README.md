@@ -2,6 +2,8 @@
 ## SAPPORO
 PBLの授業で開発を行ったリポジトリ
 
+最終プレゼンのスライド:https://speakerdeck.com/suzuhiki/clubconnet-shou-ye-zui-zhong-purezen
+
 チームメンバー6名でSuzuhikiがバックエンドとデザインを担当してリーダーを務めた
 
 
