@@ -38,7 +38,7 @@
                         <input type="submit" class="form-submit-button" value="作成" required>
                     </div>
                     <div>
-                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='3.php'">
+                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='EventList.php'">
                     </div>
                 </div>
             </div>
@@ -51,12 +51,12 @@
 
             if (isset($_SESSION['isLogin'])) {
                 if ($_SESSION['isLogin'] != true) {
-                    header('Location: 1.php');
+                    header('Location: index.php');
                 }else if($_SESSION['is_admin'] != true){
-                    header('Location: 3.php');
+                    header('Location: EventList.php');
                 }
             }else{
-                header('Location: 1.php');
+                header('Location: index.php');
             }
 
             if (isset($_POST['event_name'])) {
@@ -74,7 +74,7 @@
                 if ($db_m->CreateEvent($event_name, $event_date) == false) {
                     echo "<p class='error_text'>データ登録失敗</p>";
                 } else {
-                    header('Location:3.php');
+                    header('Location:EventList.php');
                 }
             }
             ?>

@@ -40,7 +40,7 @@
             </div>
             <div class="adminlogin">
                 <form>
-                    <input type="button" onclick="location.href='6.php'" class="form-admin-button" name="admin_login" value="管理者ログイン">
+                    <input type="button" onclick="location.href='AdminAuth.php'" class="form-admin-button" name="admin_login" value="管理者ログイン">
                 </form>
             </div>
         </div>
@@ -67,10 +67,10 @@
 
                 if(isset($_SESSION['isLogin'])){
                     if($_SESSION['isLogin'] != true){
-                        header('Location: 1.php');
+                        header('Location: index.php');
                     }
                 }else{
-                    header('Location: 1.php');
+                    header('Location: index.php');
                 }
 
                 $cols = $dbm->GetAllEventInfo();
@@ -82,8 +82,8 @@
                     echo '<tr>';
                     echo '<td>' . $event_date . '</td>' . '<td>' . $event_name . "</td>";
                     echo '<td><form class="evevt_button" method="POST" action="?">';
-                    echo '<input type="submit" class="form-submit-button" name=' . $event_id . ' value="参加申請" formaction="7.php">';
-                    echo '<input type="submit" class="form-submit-button" name=' . $event_id . ' value="詳細" formaction="8.php">';
+                    echo '<input type="submit" class="form-submit-button" name=' . $event_id . ' value="参加申請" formaction="EventEntry.php">';
+                    echo '<input type="submit" class="form-submit-button" name=' . $event_id . ' value="詳細" formaction="EventInfo.php">';
                     echo '<input type="hidden" name="event_id" value=' . $event_id . '>';
                     echo '</form></td>';
 
@@ -105,19 +105,19 @@
             <div>
                 <?php
                 if ($is_admin) {
-                    echo '<input type="button" class="form-submit-button" name="admin_create_event" onclick="location.href = \'9.php\'" value="イベント作成" >';
+                    echo '<input type="button" class="form-submit-button" name="admin_create_event" onclick="location.href = \'CreateEvent.php\'" value="イベント作成" >';
                 }
                 ?>
             </div>
             <div>
                 <?php
                 if ($is_admin) {
-                    echo '<input type="button" class="form-submit-button" name="member_list_page" onclick="location.href = \'5.php\'" value="部員名簿">';
+                    echo '<input type="button" class="form-submit-button" name="member_list_page" onclick="location.href = \'MemberList.php\'" value="部員名簿">';
                 }
                 ?>
             </div>
             <div>
-                <input type='button' class="form-submit-button" onclick="location.href = '4.php'" name="member_info_regisration" value="部員情報登録">
+                <input type='button' class="form-submit-button" onclick="location.href = 'InputMemberInfo.php'" name="member_info_regisration" value="部員情報登録">
             </div>
         </div>
     </form>

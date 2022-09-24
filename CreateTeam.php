@@ -73,7 +73,7 @@
                         <input type="submit" class="form-submit-button" value="新規チーム作成" required>
                     </div>
                     <div>
-                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='1.php'">
+                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='index.php'">
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
 
                 if ($is_add_team == true) {
                     $db_m->SetTeamData($team_name, $team_pass, $admin_mail, $admin_pass);
-                    header('Location:1.php');
+                    header('Location:index.php');
                 } else {
                     echo '<p class="error_text">すでに存在するチーム名です</p>';
                 }

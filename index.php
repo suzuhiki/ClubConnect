@@ -40,7 +40,7 @@
                         <input type="submit" class="form-submit-button" value="ログイン" required>
                     </div>
                     <div>
-                        <input type="button" onclick="location.href='2.php'" class="form-submit-button" value="新規チーム作成" required>
+                        <input type="button" onclick="location.href='CreateTeam.php'" class="form-submit-button" value="新規チーム作成" required>
                     </div>
                 </div>
             </div>
@@ -63,11 +63,11 @@
                 $flag = $db_m->CheckTeamLogin($name, $pass);
 
                 if ($flag == true) {
-                    //データベースでユーザー名とパスワードが一致した場合,セッションを記録し，3.phpに飛ぶ
+                    //データベースでユーザー名とパスワードが一致した場合,セッションを記録し，EventList.phpに飛ぶ
                     $_SESSION['teamName'] = $name;
                     $_SESSION['isLogin'] = true;
 
-                    header('Location:3.php');
+                    header('Location:EventList.php');
                     exit();
                 } else {
                     echo '<p class="error_text">チーム名またはパスワードが違います</p>';

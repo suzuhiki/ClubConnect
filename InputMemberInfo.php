@@ -7,10 +7,10 @@ if (!isset($_SESSION)) {
 
 if(isset($_SESSION['isLogin'])){
     if($_SESSION['isLogin'] != true){
-        header('Location: 1.php');
+        header('Location: index.php');
     }
 }else{
-    header('Location: 1.php');
+    header('Location: index.php');
 }
 
 if (isset($_POST['member_name'])) {
@@ -42,7 +42,7 @@ if (isset($_POST['member_name'])) {
     if ($flag == true) {
         $reg_dbm = $dbm->SetMemberData($member_name, $member_num, $member_course, $part, $home, $return_home, $member_age, $member_gen, $member_mail);
         if ($reg_dbm) {
-            header('Location:3.php');
+            header('Location:EventList.php');
             exit();
         }
     }
@@ -171,7 +171,7 @@ if (isset($_POST['member_name'])) {
                         <input type="submit" class="form-submit-button" value="登録" required>
                     </div>
                     <div>
-                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='3.php'">
+                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='EventList.php'">
                     </div>
                 </div>
             </form>

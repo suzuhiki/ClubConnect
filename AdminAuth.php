@@ -39,7 +39,7 @@
                         <input type="submit" class="form-submit-button" value="認証" required>
                     </div>
                     <div>
-                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='3.php'">
+                        <input type="button" class="form-submit-button" value="戻る" onClick="location.href='EventList.php'">
                     </div>
                 </div>
             </div>
@@ -55,10 +55,10 @@
 
             if(isset($_SESSION['isLogin'])){
                 if($_SESSION['isLogin'] != true){
-                    header('Location: 1.php');
+                    header('Location:index.php');
                 }
             }else{
-                header('Location: 1.php');
+                header('Location: index.php');
             }
 
             if (isset($_POST['admin_mail_login']) && isset($_POST['admin_pass_login'])) {
@@ -66,7 +66,7 @@
                 $admin_pass = $_POST['admin_pass_login'];
 
                 if ($dbm->CheckAdminLogin($admin_mail, $admin_pass)) {
-                    header('Location:3.php');
+                    header('Location:EventList.php');
                     $_SESSION['is_admin'] = true;
                     exit();
                 } else {

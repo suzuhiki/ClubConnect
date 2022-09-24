@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>イベント一覧</title>
+    <title>イベント詳細</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="./contens/icon.png">
     <style>
@@ -44,10 +44,10 @@
 
             if (isset($_SESSION['isLogin'])) {
                 if ($_SESSION['isLogin'] != true) {
-                    header('Location: 1.php');
+                    header('Location: index.php');
                 }
             } else {
-                header('Location: 1.php');
+                header('Location: index.php');
             }
 
             $is_admin = false;
@@ -69,7 +69,7 @@
                 $event_id = $_POST['event_id'];
                 $result = $db_m->DeleteEvent($event_id);
                 if ($result == true) {
-                    header('Location:3.php');
+                    header('Location:EventList.php');
                     exit();
                 } else {
                     echo '<p class="error_text">削除に失敗しました</p>';
@@ -129,7 +129,7 @@
                     } ?>
                 </div>
                 <div>
-                    <input type="button" class="form-submit-button" value="戻る" onClick="location.href='3.php'">
+                    <input type="button" class="form-submit-button" value="戻る" onClick="location.href='EventList.php'">
                 </div>
             </div>
         </form>
